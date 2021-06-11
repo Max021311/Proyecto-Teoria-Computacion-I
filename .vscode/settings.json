@@ -1,0 +1,14 @@
+{
+  "Lua.diagnostics.globals": [
+    "love"
+  ],
+  "[lua]": {
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 80,
+    "editor.defaultFormatter": "trixnz.vscode-lua",
+    "editor.formatOnSave": true
+  },
+  "lua.targetVersion": "5.3",
+  "lua.format.singleQuote": true,
+}
