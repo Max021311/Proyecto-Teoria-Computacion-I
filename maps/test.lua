@@ -143,7 +143,7 @@ return {
       draworder = "topdown",
       id = 2,
       name = "Eventos",
-      visible = false,
+      visible = true,
       opacity = 0.1,
       offsetx = 0,
       offsety = 0,
@@ -156,13 +156,15 @@ return {
           name = "Curar",
           type = "rest",
           shape = "rectangle",
-          x = 193.093,
-          y = 447.227,
+          x = 192,
+          y = 448,
           width = 32,
           height = 32,
           rotation = 0,
-          visible = false,
-          properties = {}
+          visible = true,
+          properties = {
+            ["msg"] = "Esta evento cura"
+          }
         }
       }
     }

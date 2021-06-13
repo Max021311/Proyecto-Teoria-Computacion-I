@@ -74,7 +74,11 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="2" name="Eventos" visible="0" opacity="0.1">
-  <object id="2" name="Curar" type="rest" x="193.093" y="447.227" width="32" height="32" visible="0"/>
+ <objectgroup id="2" name="Eventos" opacity="0.1">
+  <object id="2" name="Curar" type="Heal" x="192" y="448" width="32" height="32">
+   <properties>
+    <property name="msg" value="Esta evento cura"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
