@@ -34,7 +34,6 @@ end
 
 function Manager:update(dt)
   local i = 1
-  ---@
   local entityTable = self.entities
   while i <= #entityTable do
     entityTable[i]:update(dt)
@@ -80,9 +79,5 @@ function Manager:destroyAll(type)
     end
   end
 end
-
----@type Manager
-local manager = Manager()
-manager:addEntity(jugador)
 
 return Manager
