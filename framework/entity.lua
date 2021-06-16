@@ -2,25 +2,23 @@ Class = require('lib.hump.class')
 Vector = require('lib.hump.vector')
 
 ---@class Entity
----@field public new "function(x, y) return Entity"
----@field public drawOrder number|nil
----@field public isDestroyed boolean
-Entity =
-  Class {
-  init = function(self, x, y)
-    self.position = Vector(x, y)
-    self.manager = nil
-  end
-}
+---@field public drawOrder number|nil @Default is 3
+---@field public isDestroyed boolean @Default is false
+local Entity = Class {}
 
-Entity.isDestroyed = false
-Entity.hitbox = nil
-Entity.destroyCallback = nil
+---@param x number
+---@param y number
+function Entity:init(x, y)
+  self.position = Vector(x, y)
+  self.manager = nil
+  self.hitbox = nil
+  self.isDestroyed = false
+  self.destroyCallback = nil
+end
 
+---@param vector Vector
 function Entity:move(vector)
-  self.position = self.position + vector
-
-  if self.hitbox then
+  if self.hitbox and not self.isWall then
     self.hitbox:move(vector)
   end
 end
