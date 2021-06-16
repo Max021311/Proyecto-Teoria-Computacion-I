@@ -5,16 +5,13 @@ Bump = require('lib.bump')
 ---@field private entities table Array with entities for manage
 ---@field private collider table Collider manager
 ---@field private count number
-Manager =
-  Class {
-  init = function(self)
-    self.entities = {}
-    self.count = 0
-    self.collider = Bump.newWorld()
-    self.addEntity = function(self, entity)
-    end
-  end
-}
+Manager = Class {}
+
+function Manager:init()
+  self.entities = {}
+  self.count = 0
+  self.collider = Bump.newWorld()
+end
 
 ---@param entity Entity
 function Manager:addEntity(entity)
@@ -25,7 +22,7 @@ function Manager:addEntity(entity)
   end
 
   if entity.registerCollision then
-    entity.registerCollision(self.collider)
+    entity:registerCollision(self.collider)
   end
 
   self.count = self.count + 1
@@ -50,7 +47,7 @@ function Manager:draw()
   love.graphics.setColor(255, 255, 255)
   for i = 1, 5, 1 do
     for _, object in ipairs(self.entities) do
-      if object.draworder == i then
+      if object.drawOrder == i then
         object:draw()
       end
     end
