@@ -18,7 +18,7 @@ end
 
 ---@param vector Vector
 function Entity:move(vector)
-  if self.hitbox and not self.isWall then
+  if self.hitbox and self.type ~= 'wall' then
     self.hitbox:move(vector)
   end
 end

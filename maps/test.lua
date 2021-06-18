@@ -8,8 +8,8 @@ return {
   height = 30,
   tilewidth = 32,
   tileheight = 32,
-  nextlayerid = 5,
-  nextobjectid = 3,
+  nextlayerid = 6,
+  nextobjectid = 14,
   properties = {},
   tilesets = {
     {
@@ -154,7 +154,7 @@ return {
         {
           id = 2,
           name = "Curar",
-          type = "rest",
+          type = "Heal",
           shape = "rectangle",
           x = 192,
           y = 448,
@@ -165,6 +165,125 @@ return {
           properties = {
             ["msg"] = "Esta evento cura"
           }
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 5,
+      name = "Wall",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 3,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1,
+          y = 3,
+          width = 24,
+          height = 441,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 5,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 30,
+          y = 0,
+          width = 384,
+          height = 14,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 8,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 394,
+          y = 18,
+          width = 21,
+          height = 428,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 9,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 27,
+          y = 416,
+          width = 155,
+          height = 31,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 10,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 233,
+          y = 416,
+          width = 159,
+          height = 31,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 11,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 162,
+          y = 451,
+          width = 20,
+          height = 50,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 12,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 185,
+          y = 483,
+          width = 46,
+          height = 18,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 13,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 233,
+          y = 451,
+          width = 22,
+          height = 50,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     }
