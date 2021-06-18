@@ -11,8 +11,9 @@ function game:enter()
   self.player = Player(32, 32)
   self.map = sti('maps/test.lua')
   self.manager:addEntity(self.player)
-  self.manager:addEntity(Wall(0, 0, 26, 128))
-  self.manager:addEntity(Wall(0, 0, 128, 16))
+  for k, v in ipairs(self.map.layers.Wall.objects) do
+    self.manager:addEntity(Wall(v.x, v.y, v.width, v.height, true))
+  end
 end
 
 function game:update(dt)
