@@ -12,13 +12,15 @@ function Player:init(x, y)
   Entity.init(self, x, y)
   self.type = 'player'
   self.lives = 3
-  self.speed = 300
+  self.speed = 225
+  self.width = 32
+  self.height = 32
 end
 
 function Player:registerCollision(collider)
   local x, y = self.position:unpack()
 
-  self.hitbox = Hitbox(self, collider, x, y, 32, 32, true)
+  self.hitbox = Hitbox(self, collider, x, y, self.width, self.height, true)
 end
 
 function Player:draw()
