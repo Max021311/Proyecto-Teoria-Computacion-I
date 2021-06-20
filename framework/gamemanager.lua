@@ -5,12 +5,14 @@ Bump = require('lib.bump')
 ---@field private entities table Array with entities for manage
 ---@field private collider table Collider manager
 ---@field private count number
+---@field public player Player|nil
 Manager = Class {}
 
 function Manager:init()
   self.entities = {}
   self.count = 0
   self.collider = Bump.newWorld()
+  self.player = nil
 end
 
 ---@param entity Entity
@@ -23,6 +25,10 @@ function Manager:addEntity(entity)
 
   if entity.registerCollision then
     entity:registerCollision(self.collider)
+  end
+
+  if entity.type == 'player' then
+    self.player = entity
   end
 
   self.count = self.count + 1
