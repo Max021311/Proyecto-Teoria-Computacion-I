@@ -49,6 +49,12 @@ function Hitbox:move(v)
 				if other.entity.type == 'wall' then
 					return 'slide'
 				end
+				if item.entity.type == 'enemy' and other.entity.type == 'player' then
+					return 'slide'
+				end
+				if item.entity.type == 'player' and other.entity.type == 'enemy' then
+					return 'slide'
+				end
 			end
 		)
 
