@@ -1,6 +1,9 @@
 local machine = {}
 machine.__index = machine
 
+if table.unpack then
+  unpack = table.unpack
+end
 local NONE = 'none'
 local ASYNC = 'async'
 
