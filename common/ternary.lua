@@ -1,4 +1,4 @@
----@param cond any Condition of ternary operator
+---@param cond boolean Condition of ternary operator
 ---@param T any Return this if the condition is True
 ---@param F any Return this if the condition is False
 ---@return any
