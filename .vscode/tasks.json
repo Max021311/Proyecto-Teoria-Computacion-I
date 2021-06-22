@@ -9,7 +9,20 @@
       "linux": {
         "externalConsole": true,
         "command": "love",
-        "args": ["${workspaceFolder}"]
+        "args": [
+          "${workspaceFolder}"
+        ]
+      }
+    },
+    {
+      "label": "Build game",
+      "type": "shell",
+      "linux": {
+        "command": "source $HOME/.bash_profile ; ${workspaceFolder}/build.sh"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
       }
     }
   ]
