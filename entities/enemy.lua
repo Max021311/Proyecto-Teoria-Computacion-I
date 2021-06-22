@@ -2,7 +2,7 @@ local Class = require 'lib.hump.class'
 local Entity = require 'framework.entity'
 local Hitbox = require 'framework.hitbox'
 local FSM = require 'machine.enemy-fsm'
-local ternary = require 'common.ternary'
+local Attack = require 'entities.attack'
 
 ---@class Enemy :Entity
 local Enemy =
@@ -18,6 +18,8 @@ function Enemy:init(x, y)
   self.fsm = FSM
   self.width = 32
   self.height = 32
+  self.inDelay = false
+  self.delay = 0.5
 end
 
 function Enemy:registerCollision(collider)
@@ -49,8 +51,15 @@ function Enemy:update(dt)
       end
     end
   elseif self.fsm:is('attacking') then
-    if distInX <= 40 and distInY <= 40 then
-      Logger.info('Attack')
+    if distInX <= 40 and distInY <= 40 and not self.inDelay then
+      self.manager:addEntity(Attack(player.position.x, player.position.y))
+      self.inDelay = true
+      Timer.after(
+        self.delay,
+        function()
+          self.inDelay = false
+        end
+      )
     else
       self.fsm:b()
     end

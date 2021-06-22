@@ -55,13 +55,16 @@ function Hitbox:move(v)
 				if item.entity.type == 'player' and other.entity.type == 'enemy' then
 					return 'slide'
 				end
+				if item.entity.type == 'player' and other.entity.type == 'attack' then
+					return 'cross'
+				end
 			end
 		)
 
 		for _, col in ipairs(collisions) do
 			if
 				(not col.other.entity.isDestroyed and not col.item.entity.isDestroyed) and
-					(col.item.type ~= 'wall' and col.other.type ~= 'wall')
+					(col.item.entity.type ~= 'wall' and col.other.entity.type ~= 'wall')
 			 then
 				col.item.entity:onCollide(col.other.entity, col.item, col.other)
 				col.other.entity:onCollide(col.item.entity, col.other, col.item)
