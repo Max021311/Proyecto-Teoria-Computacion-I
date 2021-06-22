@@ -11,6 +11,7 @@ function game:enter()
   self.manager = Manager()
   self.player = Player(32, 32)
   self.map = sti('maps/test.lua')
+  love.window.setMode(self.map.width * self.map.tilewidth, self.map.height * self.map.tileheight)
   self.manager:addEntity(self.player)
   self.manager:addEntity(Enemy(128, 128))
   for k, v in ipairs(self.map.layers.Wall.objects) do
