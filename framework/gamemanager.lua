@@ -1,5 +1,7 @@
 Class = require('lib.hump.class')
 Bump = require('lib.bump')
+Timer = require 'lib.hump.timer'
+Hits = 0
 
 ---@class Manager
 ---@field private entities table Array with entities for manage
@@ -36,6 +38,7 @@ function Manager:addEntity(entity)
 end
 
 function Manager:update(dt)
+  Timer.update(dt)
   local i = 1
   local entityTable = self.entities
   while i <= #entityTable do
@@ -51,6 +54,7 @@ end
 
 function Manager:draw()
   love.graphics.setColor(255, 255, 255)
+  love.graphics.print(Hits, 0, 0)
   for i = 1, 5, 1 do
     for _, object in ipairs(self.entities) do
       if object.drawOrder == i then

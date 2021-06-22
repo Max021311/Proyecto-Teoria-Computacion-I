@@ -15,6 +15,7 @@ function Player:init(x, y)
   self.speed = 225
   self.width = 32
   self.height = 32
+  self.invincible = false
 end
 
 function Player:registerCollision(collider)
@@ -47,6 +48,19 @@ function Player:update(dt)
   end
 
   self:move(desiredDirection)
+end
+
+function Player:onCollide(otherEntity)
+  if otherEntity.type == 'attack' and not self.invincible then
+    Hits = Hits + 1
+    self.invincible = true
+    Timer.after(
+      2,
+      function()
+        self.invincible = false
+      end
+    )
+  end
 end
 
 return Player
