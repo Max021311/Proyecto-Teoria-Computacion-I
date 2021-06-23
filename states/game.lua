@@ -6,7 +6,6 @@ local Enemy = require 'entities.enemy'
 local game = {}
 
 function game:enter()
-  love.window.setTitle('Game')
   Logger.trace('Entrando al juego')
 
   Logger.trace('Añadiendo el manejador del juego')

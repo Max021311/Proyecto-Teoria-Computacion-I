@@ -1,5 +1,5 @@
 function love.conf(t)
-  t.title = 'Game'
+  t.title = 'Proyecto'
   t.version = '11.3'
   t.releases = {
     title = 'Game',
