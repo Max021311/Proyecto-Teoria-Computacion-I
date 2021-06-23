@@ -22,9 +22,11 @@ local fsm =
     },
     callbacks = {
       onstatechange = function(self, event, from, to, msg)
-        print(
-          string.format('Event: %s. Changing from "%s" to "%s". Msg: %s', event, from, to, ternary(msg, msg, 'None'))
-        )
+        if Debug then
+          print(
+            string.format('Event: %s. Changing from "%s" to "%s". Msg: %s', event, from, to, ternary(msg, msg, 'None'))
+          )
+        end
       end
     }
   }
