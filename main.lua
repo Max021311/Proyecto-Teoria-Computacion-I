@@ -13,7 +13,17 @@ function love.load(args)
       Debug = true
     end
   end
-  Logger.info('Inicializando el juego')
+
+  if Debug then
+    Timer.every(
+      2,
+      function()
+        Logger.debug(string.format('Memory used: %.2f MB', collectgarbage('count') / 1024))
+      end
+    )
+  end
+
+  Logger.trace('Iniciando el juego')
   StateManager.switch(Game)
 end
 
@@ -23,4 +33,8 @@ end
 
 function love.draw()
   StateManager.draw()
+end
+
+function love.keypressed(key, scancode, isrepeat)
+  StateManager.keypressed(key, scancode, isrepeat)
 end
