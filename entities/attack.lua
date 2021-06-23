@@ -14,6 +14,7 @@ function Attack:init(x, y)
   Entity.init(self, x, y)
   self.type = 'attack'
   self.width = 16
+  self.damage = 3
   self.height = self.width
 end
 
@@ -22,12 +23,12 @@ function Attack:registerCollision(collider)
   self.hitbox = Hitbox(self, collider, x + self.width / 2, y + self.height / 2, self.width, self.height, true)
   Timer.script(
     function(wait)
-      wait(1)
+      wait(0.5)
       self.position.x = self.position.x + self.width / 2
       self.position.y = self.position.y + self.height / 2
       self.width = self.width / 2
       self.height = self.width
-      wait(1)
+      wait(0.5)
       self:destroy()
     end
   )
