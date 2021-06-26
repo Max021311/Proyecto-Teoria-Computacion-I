@@ -1,14 +1,21 @@
 {
-  "Lua.diagnostics.globals": [
-    "love"
+  "Lua.workspace.library": [
+    "/home/maxwell/projects/love/Proyecto-Teoria-Computacion-I/completions"
   ],
+  "Lua.workspace.preloadFileSize": 500,
   "[lua]": {
     "editor.tabSize": 2,
     "editor.wordWrap": "on",
-    "editor.wordWrapColumn": 80,
+    "editor.wordWrapColumn": 100,
     "editor.defaultFormatter": "trixnz.vscode-lua",
     "editor.formatOnSave": true
   },
   "lua.targetVersion": "5.3",
   "lua.format.singleQuote": true,
+  "lua.format.lineWidth": 120,
+  "Lua.diagnostics.globals": [
+    "love"
+  ],
+  "cSpell.enabled": true,
+  "cSpell.language": "en,es",
 }
