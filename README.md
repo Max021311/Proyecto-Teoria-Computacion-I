@@ -9,6 +9,8 @@ Dependencias
 
 # Ejecutar y crear ejecutables
 
+Puedes descargar los ejecutables ya creados desde aqui https://github.com/Max021311/Proyecto-Teoria-Computacion-I/releases/tag/v1.0.0 en la seccion Assets
+
 Los ejecutables se crean en la carpeta releases. Para windows se generan dos zips uno para 32 y otro para 64 bits. Descomprime el necesario
 segun tu sistema y dentro habra un exe, ejecutalo.
 
