@@ -115,7 +115,7 @@ return {
       draworder = "topdown",
       id = 2,
       name = "Eventos",
-      visible = true,
+      visible = false,
       opacity = 0.1,
       offsetx = 0,
       offsety = 0,
